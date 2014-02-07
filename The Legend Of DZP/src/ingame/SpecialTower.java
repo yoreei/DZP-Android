@@ -23,7 +23,7 @@ public class SpecialTower implements Tower {
     }
 
     @Override
-    public void onTakeHit() {
+    public void onHit() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
