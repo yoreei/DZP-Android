@@ -3,7 +3,7 @@ package ingame;
 public abstract class MainTower implements Tower{
     
     @Override
-    public abstract boolean fire();
+    public abstract void fire();
     @Override
     public void onHit() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -17,7 +17,7 @@ public abstract class MainTower implements Tower{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     @Override
-    public boolean destroy() {
+    public void destroy() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     @Override

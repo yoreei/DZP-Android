@@ -3,7 +3,7 @@ package ingame;
 public class NovaTower extends SpecialTower {
 
     @Override
-    public boolean fire() {
+    public void fire() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
