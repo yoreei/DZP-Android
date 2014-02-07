@@ -1,35 +1,24 @@
 package ingame;
 
-public class SpecialTower implements Tower {
-
-    @Override
-    public boolean fire() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+public abstract class SpecialTower implements Tower {
     
     @Override
-    public void reduceHP(int amount) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+    public abstract boolean fire();
     @Override
-    public void increaseHP(int amount) {
+    public void doDamage(int amount) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    @Override
+    public void repair(int amount) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     @Override
     public boolean destroy() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
     @Override
-    public void onHit() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+    public abstract void onHit();
     @Override
-    public void upgrade() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public abstract void upgrade();
     
 }

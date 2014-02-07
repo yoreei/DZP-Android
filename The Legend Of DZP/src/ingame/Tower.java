@@ -2,11 +2,11 @@ package ingame;
 
 public interface Tower {
 
-    public boolean fire();
-    public void onHit();
-    public void reduceHP(int amount);
-    public void increaseHP(int amount);
-    public boolean destroy();
-    public void upgrade();
+    public abstract boolean fire();
+    public abstract void onHit();
+    public abstract void doDamage(int amount);
+    public abstract void repair(int amount);
+    public abstract boolean destroy();
+    public abstract void upgrade();
     
 }
