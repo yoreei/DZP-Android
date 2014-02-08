@@ -10,9 +10,10 @@ public abstract class SpecialTower implements Tower {
     private int range;
     private Point position;
     
-    public SpecialTower(int range) {
+    public SpecialTower(int range, Point position) {
         HP = maxHP;
         this.range = range;
+        this.position = position;
     }
     
     @Override
