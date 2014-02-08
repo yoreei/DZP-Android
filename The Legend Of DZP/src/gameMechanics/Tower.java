@@ -77,7 +77,7 @@ public abstract class Tower {
     ///Action
     public boolean hasInRange() {
         
-        for(int i=0;)
+        //for(int i=0;)
         
         return false;
     }

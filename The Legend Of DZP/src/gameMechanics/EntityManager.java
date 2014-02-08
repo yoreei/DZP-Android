@@ -7,10 +7,10 @@ public class EntityManager extends Thread {
     private ArrayList<Tower> towers;
     private ArrayList<Mob> mobs;
     
-    public EntityManager() {
-        towers.add(new PigTower());
-        towers.add(new PolecatTower());
-        towers.add(new PandaTower());
+    public EntityManager(int towerLevelPig, int towerLevelPolecat, int towerLevelPanda) {
+        towers.add(new PigTower(towerLevelPig));
+        towers.add(new PolecatTower(towerLevelPolecat));
+        towers.add(new PandaTower(towerLevelPanda));
     }
     
     public void newTower(Tower newTower) {
