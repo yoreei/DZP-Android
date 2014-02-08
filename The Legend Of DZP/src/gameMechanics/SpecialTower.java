@@ -3,17 +3,12 @@ package gameMechanics;
 import java.awt.Point;
 
 
-public abstract class SpecialTower implements Tower {
+public abstract class SpecialTower extends Tower {
     
-    private int HP;
-    private final int maxHP = 100;
-    private int range;
-    private final Point position;
+    
     
     public SpecialTower(int range, Point position) {
-        HP = maxHP;
-        this.range = range;
-        this.position = position;
+        super(100, position, range);
     }
     
     @Override
@@ -56,7 +51,7 @@ public abstract class SpecialTower implements Tower {
     
     @Override
     public void destroy() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
     
     @Override

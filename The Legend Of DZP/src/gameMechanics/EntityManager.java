@@ -7,11 +7,10 @@ public class EntityManager extends Thread {
     private ArrayList<Tower> towers;
     private ArrayList<Mob> mobs;
     
-    public EntityManager(ArrayList<MainTower> towers) {
-        
-        for(int i=0;i<=towers.size()-1;i++) {
-            this.towers.add(towers.get(i));
-        }
+    public EntityManager() {
+        towers.add(new PigTower());
+        towers.add(new PolecatTower());
+        towers.add(new PandaTower());
     }
     
     public void newTower(Tower newTower) {
@@ -42,10 +41,7 @@ public class EntityManager extends Thread {
             
             for(int i=0;i<=mobs.size()-1;i++) {
                 mobs.get(i).act();
-            }
-            
-            
-            
+            }           
         }
         
     }
