@@ -18,6 +18,6 @@ public interface Tower {
     public abstract void upgrade();
 
     ///Action
-    public void isInRange(int range);
+    public boolean hasInRange();
     public abstract void fire();
 }
