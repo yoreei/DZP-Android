@@ -1,13 +1,46 @@
 package ingame;
 
+import java.awt.Point;
+
+
 public abstract class SpecialTower implements Tower {
     
     private int HP;
-    private final int MAX_HP = 100;
+    private final int maxHP = 100;
     private int range;
+    private Point position;
+    
+    public SpecialTower(int range) {
+        HP = maxHP;
+        this.range = range;
+    }
     
     @Override
-    public abstract void fire();
+    public int getRange() {
+        return this.range;
+    }
+
+    @Override
+    public int getHP() {
+        return this.HP;
+    }
+
+    @Override
+    public int getMaxHP() {
+        return this.maxHP;
+    }
+
+    @Override
+    public Point getPosition() {
+        return this.position;
+    }
+    
+    
+    
+    @Override
+    public void isInRange(int range) {
+        
+    }
     
     @Override
     public void doDamage(int amount) {
@@ -16,7 +49,7 @@ public abstract class SpecialTower implements Tower {
     
     @Override
     public void repair(int amount) {
-        HP = MAX_HP;
+        HP = maxHP;
     }
     
     @Override
@@ -29,5 +62,12 @@ public abstract class SpecialTower implements Tower {
     
     @Override
     public abstract void upgrade();
+
+    
+
+    @Override
+    public void fire() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
