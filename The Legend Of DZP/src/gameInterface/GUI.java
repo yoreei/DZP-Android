@@ -1,23 +1,33 @@
 
-package titleScreen;
+package gameInterface;
 
 import java.awt.Dimension;
-import java.awt.Rectangle;
+import javax.swing.JButton;
+import javax.swing.JPanel;
 
 public class GUI extends javax.swing.JFrame {
 
+    private Loader l;
+    private JPanel titleScreen;
+    private JButton Start;
+    
+    public void run () {
+        this.setVisible(true);
+        l.start();
+        while(true) {
+            if(loadingProgress.getValue()==100) break;
+        }
+        
+        loadingScreen.setVisible(false);
+        titleScreen.setVisible(true);
+    }
+    
     public GUI() {
         setMinimumSize(new Dimension(1280, 768));
         setExtendedState(MAXIMIZED_BOTH);
         revalidate();
         initComponents();
-        /*loadingScreen.setBounds(new Rectangle(0, 0, getSize().width, getSize().height));
-        revalidate();
-        int x, y;
-        x = loadingScreen.getSize().width;
-        y = loadingScreen.getSize().height;
-        loadingProgress.setLocation(x/2-loadingProgress.getSize().width/2, y/2-loadingProgress.getSize().height/2);
-        revalidate();*/
+        l = new Loader(loadingProgress);
     }
 
     @SuppressWarnings("unchecked")

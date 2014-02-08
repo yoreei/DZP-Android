@@ -1,4 +1,4 @@
-package ingame;
+package gameMechanics;
 
 import java.awt.Point;
 
