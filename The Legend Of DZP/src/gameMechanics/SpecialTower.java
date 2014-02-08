@@ -39,7 +39,8 @@ public abstract class SpecialTower implements Tower {
     
     
     @Override
-    public void isInRange(int range) {
+    public boolean hasInRange() {
+        return false;
         
     }
     

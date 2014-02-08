@@ -60,7 +60,7 @@ public abstract class MainTower implements Tower{
     }
 
     @Override
-    public void isInRange(int range) {
+    public boolean hasInRange() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
