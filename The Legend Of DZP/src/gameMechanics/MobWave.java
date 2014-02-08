@@ -1,4 +1,4 @@
-package ingame;
+package gameMechanics;
 
 public class MobWave {
     

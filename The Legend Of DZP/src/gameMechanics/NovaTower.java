@@ -1,16 +1,15 @@
-package ingame;
+package gameMechanics;
 
 import java.awt.Point;
 
-public class LongRangeTower extends SpecialTower {
+public class NovaTower extends SpecialTower {
 
-    public LongRangeTower(int range, Point position) {
+    public NovaTower(int range, Point position) {
         super(range, position);
     }
-    
     @Override
     public void fire() {
-        
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
