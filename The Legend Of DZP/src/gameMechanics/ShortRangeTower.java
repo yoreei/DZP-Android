@@ -4,8 +4,8 @@ import java.awt.Point;
 
 public class ShortRangeTower extends SpecialTower {
 
-    public ShortRangeTower(int range, Point position) {
-        super(range, position);
+    public ShortRangeTower(int range, Point position, int level) {
+        super(range, position, level);
     }
 
     @Override
