@@ -8,7 +8,7 @@ public abstract class SpecialTower implements Tower {
     private int HP;
     private final int maxHP = 100;
     private int range;
-    private Point position;
+    private final Point position;
     
     public SpecialTower(int range, Point position) {
         HP = maxHP;

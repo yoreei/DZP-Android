@@ -3,7 +3,7 @@ package ingame;
 import java.awt.Point;
 
 public interface Tower {
-
+    
     ///Get parameters
     public int getRange();
     public int getHP();
