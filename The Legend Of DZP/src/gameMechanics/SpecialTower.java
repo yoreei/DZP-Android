@@ -5,10 +5,10 @@ import java.awt.Point;
 
 public abstract class SpecialTower extends Tower {
     
+    private static final int SpecialMaxHP = 100;
     
-    
-    public SpecialTower(int range, Point position) {
-        super(100, position, range);
+    public SpecialTower(int range, Point position, int level) {
+        super(SpecialMaxHP, position, range, level);
     }
     
     @Override

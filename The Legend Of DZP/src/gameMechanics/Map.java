@@ -11,7 +11,7 @@ public class Map {
         for(int i=0;i<=100;i++) {
             tiles.add(new ArrayList<Tile>());
             for(int j=0;j<=150;j++) {
-                tiles.get(i).add(new Tile());
+                //tiles.get(i).add(new Tile());
             }
         }
     }

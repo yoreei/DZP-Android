@@ -4,8 +4,8 @@ import java.awt.Point;
 
 public class NovaTower extends SpecialTower {
 
-    public NovaTower(int range, Point position) {
-        super(range, position);
+    public NovaTower(int range, Point position, int level) {
+        super(range, position, level);
     }
     @Override
     public void fire() {
