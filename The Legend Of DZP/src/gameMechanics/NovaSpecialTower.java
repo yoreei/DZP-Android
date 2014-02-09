@@ -2,12 +2,14 @@ package gameMechanics;
 
 import java.awt.Point;
 
-public class PandaTower extends MainTower {
-    
-    private static final Point pandaPosition = new Point(3, 4);
-    
-    public PandaTower(int level) {
-        super(pandaPosition, 1);
+public class NovaSpecialTower extends SpecialTower {
+
+    public NovaSpecialTower(int range, Point position, int level, int maxCharge) {
+        super(range, position, level, maxCharge);
+    }
+    @Override
+    public void fire() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -16,9 +18,8 @@ public class PandaTower extends MainTower {
     }
 
     @Override
-    public void fire() {
+    public boolean hasInRange() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
     
 }

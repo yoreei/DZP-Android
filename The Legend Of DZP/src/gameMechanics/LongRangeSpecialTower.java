@@ -2,24 +2,25 @@ package gameMechanics;
 
 import java.awt.Point;
 
-public class PolecatTower extends MainTower {
+public class LongRangeSpecialTower extends SpecialTower {
 
-    private static final Point polecatPosition = new Point(3, 4);
-    
-    public PolecatTower(int level) {
-        super(polecatPosition, level);
+    public LongRangeSpecialTower(int range, Point position, int level, int maxCharge) {
+        super(range, position, level, maxCharge);
     }
     
-
+    @Override
+    public void fire() {
+        
+    }
+    
     @Override
     public void upgrade() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void fire() {
+    public boolean hasInRange() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
     
 }

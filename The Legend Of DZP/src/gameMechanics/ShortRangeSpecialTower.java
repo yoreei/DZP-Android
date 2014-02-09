@@ -2,9 +2,9 @@ package gameMechanics;
 
 import java.awt.Point;
 
-public class ShortRangeTower extends SpecialTower {
+public class ShortRangeSpecialTower extends SpecialTower {
 
-    public ShortRangeTower(int range, Point position, int level, int maxCharge) {
+    public ShortRangeSpecialTower(int range, Point position, int level, int maxCharge) {
         super(range, position, level, maxCharge);
     }
 

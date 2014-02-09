@@ -10,9 +10,9 @@ public class EntityManager extends Thread {
     private int spawnWave;
     
     public EntityManager(int towerLevelPig, int towerLevelPolecat, int towerLevelPanda) {
-        towers.add(new PigTower(towerLevelPig));
-        towers.add(new PolecatTower(towerLevelPolecat));
-        towers.add(new PandaTower(towerLevelPanda));
+        towers.add(new PigMainTower(towerLevelPig));
+        towers.add(new PolecatMainTower(towerLevelPolecat));
+        towers.add(new PandaMainTower(towerLevelPanda));
         tickCounter = 0;
         spawnWave = 0;
     }

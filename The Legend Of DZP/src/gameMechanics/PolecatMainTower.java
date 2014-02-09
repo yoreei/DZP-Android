@@ -2,12 +2,12 @@ package gameMechanics;
 
 import java.awt.Point;
 
-public class PigTower extends MainTower {
+public class PolecatMainTower extends MainTower {
 
-    private static final Point pigPosition = new Point(3, 4);
+    private static final Point polecatPosition = new Point(3, 4);
     
-    public PigTower(int level) {
-        super(pigPosition, level);
+    public PolecatMainTower(int level) {
+        super(polecatPosition, level);
     }
     
 

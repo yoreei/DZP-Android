@@ -2,25 +2,24 @@ package gameMechanics;
 
 import java.awt.Point;
 
-public class LongRangeTower extends SpecialTower {
+public class PigMainTower extends MainTower {
 
-    public LongRangeTower(int range, Point position, int level, int maxCharge) {
-        super(range, position, level, maxCharge);
+    private static final Point pigPosition = new Point(3, 4);
+    
+    public PigMainTower(int level) {
+        super(pigPosition, level);
     }
     
-    @Override
-    public void fire() {
-        
-    }
-    
+
     @Override
     public void upgrade() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean hasInRange() {
+    public void fire() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
     
 }
