@@ -1,6 +1,5 @@
 package gameMechanics;
 
-import java.awt.Point;
 import java.util.ArrayList;
 
 public class EntityManager extends Thread {
@@ -8,12 +7,14 @@ public class EntityManager extends Thread {
     private ArrayList<Tower> towers;
     private ArrayList<Mob> mobs;
     private int tickCounter;
+    private int spawnWave;
     
     public EntityManager(int towerLevelPig, int towerLevelPolecat, int towerLevelPanda) {
         towers.add(new PigTower(towerLevelPig));
         towers.add(new PolecatTower(towerLevelPolecat));
         towers.add(new PandaTower(towerLevelPanda));
         tickCounter = 0;
+        spawnWave = 0;
     }
  
     ///Spawn/despawn
@@ -30,23 +31,38 @@ public class EntityManager extends Thread {
         this.mobs.add(m);
     }
     
+    private void setSpawnWave(int wave) {
+        this.spawnWave = wave;
+    }
+    
     @Override
     public void run () {
         
+        /** 
+         * Run code
+         */
+        
+        
         while(Nexus.isAlive()) {
             
-            ///Spawn mobs
+            /** MOBS **/
             if(mobs.isEmpty()) {
-                spawnWave();
+                setSpawnWave(gameInterface.Run.resources);
             }
-            
-            for(int i=0;i<=towers.size()-1;i++) {
-                towers.get(i).fire();
+            if(spawnWave) {
+                
             }
             for(int i=0;i<=mobs.size()-1;i++) {
                 mobs.get(i).act();
             }
+            
+            /** TOWERS **/        
+            for(int i=0;i<=towers.size()-1;i++) {
+                towers.get(i).fire();
+            }
 
+            /** GENERATOR **/
+            
             
         }
         
