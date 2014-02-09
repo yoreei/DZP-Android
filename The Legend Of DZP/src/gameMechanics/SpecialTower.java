@@ -5,62 +5,26 @@ import java.awt.Point;
 
 public abstract class SpecialTower extends Tower {
     
-    private static final int SpecialMaxHP = 100;
+    private final int SpecialMaxCharge;
+    private int charge;
     
-    public SpecialTower(int range, Point position, int level) {
-        super(SpecialMaxHP, position, range, level);
+    public SpecialTower(int range, Point position, int level, int maxCharge) {
+        super(position, range, level);
+        this.SpecialMaxCharge = maxCharge;
+        this.charge = this.SpecialMaxCharge;
     }
     
-    @Override
-    public int getRange() {
-        return this.range;
-    }
-
-    @Override
-    public int getHP() {
-        return this.HP;
-    }
-
-    @Override
-    public int getMaxHP() {
-        return this.maxHP;
-    }
-
-    @Override
-    public Point getPosition() {
-        return this.position;
+    ///Set parameters
+    protected void setCharge(int charge) {
+        this.charge = charge;
     }
     
-    
-    
-    @Override
-    public boolean hasInRange() {
-        return false;
-        
+    ///Get parameters
+    protected int getCharge() {
+        return this.charge;
     }
-    
-    @Override
-    public void doDamage(int amount) {
-        this.HP-=amount;
-    }
-    
-    @Override
-    public void repair(int amount) {
-        HP = maxHP;
-    }
-    
-    @Override
-    public void destroy() {
-        
-    }
-    
-    @Override
-    public abstract void onHit();
-    
     @Override
     public abstract void upgrade();
-
-    
 
     @Override
     public void fire() {

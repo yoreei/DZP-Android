@@ -4,28 +4,18 @@ import java.awt.Point;
 
 public abstract class Tower {
 
-    protected final int maxHP;
-    protected int HP;
     protected int range;
     protected final Point position;
     protected int level;
     protected final int maxLevel = 5;
 
-    protected Tower(int maxHP, Point position, int range, int level) {
-        this.maxHP = maxHP;
+    protected Tower(Point position, int range, int level) {
         this.position = position;
         setLevel(level);
         setRange(range);
-        setHP(maxHP);
     }
 
     ///Set parameters
-    private void setHP(int HP) {
-        if (HP <= this.maxHP) {
-            this.HP = HP;
-        }
-    }
-
     private void setRange(int range) {
         this.range = range;
     }
@@ -38,38 +28,13 @@ public abstract class Tower {
     public int getRange() {
         return this.range;
     }
-
-    public int getHP() {
-        return this.HP;
-    }
-
-    public int getMaxHP() {
-        return this.maxHP;
-    }
-
     public Point getPosition() {
         return this.position;
     }
 
     ///Status updates
-    public abstract void onHit();
-
-    public void doDamage(int amount) {
-        this.HP -= amount;
-        if (HP < 1) {
-            this.destroy();
-        }
-    }
-
-    public void repair(int amount) {
-        this.HP += amount;
-        if (HP > maxHP) {
-            HP = maxHP;
-        }
-    }
-
-    public void destroy() {
-        gameInterface.Run.manager.destroyTower(this);
+    public void despawn() {
+        gameInterface.Run.manager.despawnTower(this);
     }
 
     public abstract void upgrade();

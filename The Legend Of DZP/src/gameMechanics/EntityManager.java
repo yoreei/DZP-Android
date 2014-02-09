@@ -1,5 +1,6 @@
 package gameMechanics;
 
+import java.awt.Point;
 import java.util.ArrayList;
 
 public class EntityManager extends Thread {
