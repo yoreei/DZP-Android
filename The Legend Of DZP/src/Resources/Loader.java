@@ -1,4 +1,4 @@
-package gameInterface;
+package Resources;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -7,6 +7,9 @@ import javax.swing.JProgressBar;
 public class Loader extends Thread {
     
     private JProgressBar p;
+    private 
+    
+    
     
     public Loader(JProgressBar p) {
         this.p = p;
