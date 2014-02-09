@@ -10,10 +10,6 @@ public class PolecatTower extends MainTower {
         super(polecatPosition, level);
     }
     
-    @Override
-    public void onHit() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     @Override
     public void upgrade() {

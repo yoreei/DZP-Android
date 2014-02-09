@@ -8,7 +8,7 @@ public abstract class MainTower extends Tower{
     private static final int MainRange = 30;
     
     public MainTower(Point position, int level) {
-        super(MainMaxHP, position, MainRange, level);
+        super(position, MainRange, level);
     }
 
     
