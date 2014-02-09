@@ -2,14 +2,14 @@ package gameMechanics;
 
 import java.util.ArrayList;
 
-public class EntityManager extends Thread {
+public class EntityManagerThread extends Thread {
     
     private ArrayList<Tower> towers;
     private ArrayList<Mob> mobs;
     private int tickCounter;
     private int spawnWave;
     
-    public EntityManager(int towerLevelPig, int towerLevelPolecat, int towerLevelPanda) {
+    public EntityManagerThread(int towerLevelPig, int towerLevelPolecat, int towerLevelPanda) {
         towers.add(new PigMainTower(towerLevelPig));
         towers.add(new PolecatMainTower(towerLevelPolecat));
         towers.add(new PandaMainTower(towerLevelPanda));

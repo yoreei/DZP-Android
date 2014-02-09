@@ -1,14 +1,14 @@
 package gameInterface;
 
 import Resources.Resources;
-import gameMechanics.EntityManager;
+import gameMechanics.EntityManagerThread;
 import org.lwjgl.LWJGLException;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
 
 public class Run {
     
-    public static EntityManager manager;
+    public static EntityManagerThread manager;
     public static Resources resources;
     
     public static void main(String[] args) throws LWJGLException {
