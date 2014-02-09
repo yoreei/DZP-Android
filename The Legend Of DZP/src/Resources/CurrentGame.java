@@ -13,7 +13,7 @@ public class CurrentGame {
     public CurrentGame(Epoch e, Level l, File upgradeList) {
         this.epoch = e;
         this.level = l;
-        
+        towerUpgrades=null;
     }
     
     

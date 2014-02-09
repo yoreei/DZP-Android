@@ -47,11 +47,11 @@ public class EntityManagerThread extends Thread {
             
             /** MOBS **/
             if(mobs.isEmpty()) {
-                setSpawnWave(gameInterface.Run.resources);
+                //setSpawnWave(gameInterface.Run.resources);
             }
-            if(spawnWave) {
-                
-            }
+            //if(spawnWave) {
+            //    
+            //}
             for(int i=0;i<=mobs.size()-1;i++) {
                 mobs.get(i).act();
             }
