@@ -5,15 +5,19 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JProgressBar;
 
-public class Loader extends Thread {
+public class Resources extends Thread {
     
     private JProgressBar p;
     private ArrayList<Epoch> epoches;
+    private 
     
     
-    
-    public Loader(JProgressBar p) {
+    public Resources(JProgressBar p) {
         this.p = p;
+    }
+    
+    public void setCurrentResources(Epoch e, Level l) {
+        
     }
     
     @Override
@@ -23,7 +27,7 @@ public class Loader extends Thread {
                 p.setValue(i/100);
                 Thread.sleep(1);
             } catch (InterruptedException ex) {
-                Logger.getLogger(Loader.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Resources.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
