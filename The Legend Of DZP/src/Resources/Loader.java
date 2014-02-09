@@ -1,5 +1,6 @@
 package Resources;
 
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JProgressBar;
@@ -7,7 +8,7 @@ import javax.swing.JProgressBar;
 public class Loader extends Thread {
     
     private JProgressBar p;
-    private 
+    private ArrayList<Epoch> epoches;
     
     
     
