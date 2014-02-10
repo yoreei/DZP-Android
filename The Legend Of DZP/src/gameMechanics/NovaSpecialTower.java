@@ -1,10 +1,10 @@
 package gameMechanics;
 
-import java.awt.Point;
+import java.awt.Rectangle;
 
 public class NovaSpecialTower extends SpecialTower {
 
-    public NovaSpecialTower(int range, Point position, int level, int maxCharge) {
+    public NovaSpecialTower(int range, Rectangle position, int level, int maxCharge) {
         super(range, position, level);
     }
     @Override

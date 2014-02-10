@@ -1,10 +1,12 @@
 package gameMechanics;
 
-import java.awt.Point;
 import java.awt.Rectangle;
 
 public abstract class Tower {
 
+    protected static final Rectangle PolecatPosition = new Rectangle(3, 4, 5, 6);
+    protected static final Rectangle PigPosition = new Rectangle(3, 4, 5, 6);
+    protected static final Rectangle PandaPosition = new Rectangle(3, 4, 5, 6);
     protected int range;
     protected final Rectangle position;
     protected int level;
@@ -35,7 +37,7 @@ public abstract class Tower {
     public int getRange() {
         return this.range;
     }
-    public Point getPosition() {
+    public Rectangle getPosition() {
         return this.position;
     }
     public int getHP() {

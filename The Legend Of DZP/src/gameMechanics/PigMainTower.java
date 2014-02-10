@@ -1,13 +1,11 @@
 package gameMechanics;
 
-import java.awt.Point;
+import java.awt.Rectangle;
 
 public class PigMainTower extends MainTower {
-
-    private static final Point pigPosition = new Point(3, 4);
     
     public PigMainTower(int level) {
-        super(pigPosition, level);
+        super(PigPosition, level);
     }
     
 

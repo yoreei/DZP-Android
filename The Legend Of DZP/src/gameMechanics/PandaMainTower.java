@@ -1,13 +1,9 @@
 package gameMechanics;
 
-import java.awt.Point;
-
 public class PandaMainTower extends MainTower {
     
-    private static final Point pandaPosition = new Point(3, 4);
-    
     public PandaMainTower(int level) {
-        super(pandaPosition, 1);
+        super(PandaPosition, 1);
     }
 
     @Override

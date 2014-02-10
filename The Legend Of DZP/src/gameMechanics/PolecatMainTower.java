@@ -1,13 +1,14 @@
 package gameMechanics;
 
 import java.awt.Point;
+import java.awt.Rectangle;
 
 public class PolecatMainTower extends MainTower {
 
-    private static final Point polecatPosition = new Point(3, 4);
+    
     
     public PolecatMainTower(int level) {
-        super(polecatPosition, level);
+        super(PolecatPosition, level);
     }
     
 

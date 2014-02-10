@@ -1,10 +1,11 @@
 package gameMechanics;
 
 import java.awt.Point;
+import java.awt.Rectangle;
 
 public class ShortRangeSpecialTower extends SpecialTower {
 
-    public ShortRangeSpecialTower(int range, Point position, int level) {
+    public ShortRangeSpecialTower(int range, Rectangle position, int level) {
         super(range, position, level);
     }
 
