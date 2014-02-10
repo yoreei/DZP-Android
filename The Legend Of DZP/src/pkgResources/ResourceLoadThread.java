@@ -1,13 +1,9 @@
-package Resources;
+package pkgResources;
 
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JProgressBar;
-
-/** ResourceLoadThread is used to load all the resources the game will need.
- * It runs on a separate Thread
- * It has a progress bar which can be used to display the loading a progress.*/
 
 public class ResourceLoadThread extends Thread {
     

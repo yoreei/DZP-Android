@@ -1,27 +1,34 @@
 package gameMechanics;
 
 import java.awt.Point;
+import java.awt.Rectangle;
 
 public abstract class Tower {
 
     protected int range;
-    protected final Point position;
+    protected final Rectangle position;
     protected int level;
     protected final int maxLevel = 5;
+    protected final int maxHP;
+    protected int HP;
 
-    protected Tower(Point position, int range, int level) {
+    protected Tower(Rectangle position, int range, int level, int maxHP) {
         this.position = position;
         setLevel(level);
         setRange(range);
+        this.maxHP = maxHP;
+        setHP(HP);
     }
 
     ///Set parameters
-    private void setRange(int range) {
+    protected final void setRange(int range) {
         this.range = range;
     }
-
-    private void setLevel(int level) {
+    protected final void setLevel(int level) {
         this.level = level;
+    }
+    protected final void setHP(int HP) {
+        this.HP = HP;
     }
     
     ///Get parameters
@@ -31,7 +38,11 @@ public abstract class Tower {
     public Point getPosition() {
         return this.position;
     }
+    public int getHP() {
+        return this.HP;
+    }
 
+    
     ///Status updates
     public void despawn() {
         gameInterface.Run.manager.despawnTower(this);
@@ -42,10 +53,12 @@ public abstract class Tower {
     ///Action
     public boolean hasInRange() {
         
-        //for(int i=0;)
+        
         
         return false;
     }
 
     public abstract void fire();
+
+    
 }

@@ -1,4 +1,4 @@
-package resources;
+package pkgResources;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -11,7 +11,7 @@ public class Epoch {
     private ArrayList<ArrayList<ImageIcon>> mapTexture;
     private ImageIcon characterSkin;
     private Map<String, ImageIcon> towerSkins;
-    
+
     public Epoch(File epochFile) {
         
     }

@@ -1,28 +1,22 @@
 package gameMechanics;
 
-import java.awt.Point;
+
+import java.awt.Rectangle;
 
 
 public abstract class SpecialTower extends Tower {
     
-    private final int SpecialMaxCharge;
     private int charge;
+    private static final int SpecialMaxHP = 100;
     
-    public SpecialTower(int range, Point position, int level, int maxCharge) {
-        super(position, range, level);
-        this.SpecialMaxCharge = maxCharge;
-        this.charge = this.SpecialMaxCharge;
+    public SpecialTower(int range, Rectangle position, int level) {
+        super(position, range, level, SpecialMaxHP);
     }
     
     ///Set parameters
-    protected void setCharge(int charge) {
-        this.charge = charge;
-    }
     
     ///Get parameters
-    protected int getCharge() {
-        return this.charge;
-    }
+
     @Override
     public abstract void upgrade();
 

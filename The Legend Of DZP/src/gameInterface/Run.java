@@ -1,18 +1,22 @@
 package gameInterface;
 
-import Resources.ResourceLoadThread;
 import gameMechanics.EntityManagerThread;
-import org.lwjgl.LWJGLException;
+import java.io.IOException;
+import pkgResources.ResourceLoadThread;
+/*import org.lwjgl.LWJGLException;
 import org.lwjgl.opengl.Display;
-import org.lwjgl.opengl.DisplayMode;
+import org.lwjgl.opengl.DisplayMode;*/
 
 public class Run {
     
     public static EntityManagerThread manager;
     public static ResourceLoadThread resources;
     
-    public static void main(String[] args) throws LWJGLException {
-        Display.setDisplayMode(new DisplayMode(500, 500));
+    public static void main(String[] args) throws IOException, ClassNotFoundException /*throws LWJGLException **/{
+        ///EventQueue
+        
+        
+        /*Display.setDisplayMode(new DisplayMode(500, 500));
         Display.setFullscreen(true);
         Display.setTitle("The Legend of DZP");
         Display.create();
@@ -22,6 +26,6 @@ public class Run {
         while(!Display.isCloseRequested()) {
             Display.update();
         }
-        Display.destroy();
+        Display.destroy();*/
     }
 }

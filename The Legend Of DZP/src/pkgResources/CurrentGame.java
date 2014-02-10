@@ -1,4 +1,4 @@
-package resources;
+package pkgResources;
 
 import java.io.File;
 import java.util.Map;

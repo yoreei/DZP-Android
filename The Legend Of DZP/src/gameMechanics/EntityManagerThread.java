@@ -1,6 +1,8 @@
 package gameMechanics;
 
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class EntityManagerThread extends Thread {
     
@@ -23,6 +25,7 @@ public class EntityManagerThread extends Thread {
     }
     public void despawnTower(Tower t) {
         towers.remove(t);
+        
     }
     public void despawnMob(Mob m) {
         mobs.remove(m);
@@ -45,7 +48,7 @@ public class EntityManagerThread extends Thread {
         
         while(Nexus.isAlive()) {
             
-            /** MOBS **/
+            /* MOBS */
             if(mobs.isEmpty()) {
                 //setSpawnWave(gameInterface.Run.resources);
             }
@@ -56,14 +59,23 @@ public class EntityManagerThread extends Thread {
                 mobs.get(i).act();
             }
             
-            /** TOWERS **/        
+            /** TOWERS */        
             for(int i=0;i<=towers.size()-1;i++) {
                 towers.get(i).fire();
             }
 
-            /** GENERATOR **/
+            /* GENERATOR */
             
             
+            
+            
+            
+            
+            try {
+                Thread.sleep(1);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(EntityManagerThread.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         
     }
