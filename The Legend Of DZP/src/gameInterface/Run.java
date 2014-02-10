@@ -25,17 +25,5 @@ public class Run {
             Display.update();
         }
         Display.destroy();*/
-        
-        String a;
-        Scanner s = new Scanner(System.in);
-        a = s.nextLine();
-        File f = new File ("Serial.bin");
-        if(!f.exists()) f.createNewFile();
-        FileInputStream fileOut = new FileInputStream(f);
-        try (ObjectInputStream objOut = new ObjectInputStream(fileOut)) {
-            a = (String) objOut.readObject();
-        }
-        System.out.println(a);
-        String
     }
 }
