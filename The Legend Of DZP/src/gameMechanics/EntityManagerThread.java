@@ -45,7 +45,7 @@ public class EntityManagerThread extends Thread {
         
         while(Nexus.isAlive()) {
             
-            /** MOBS **/
+            /* MOBS */
             if(mobs.isEmpty()) {
                 //setSpawnWave(gameInterface.Run.resources);
             }
@@ -56,12 +56,12 @@ public class EntityManagerThread extends Thread {
                 mobs.get(i).act();
             }
             
-            /** TOWERS **/        
+            /** TOWERS */        
             for(int i=0;i<=towers.size()-1;i++) {
                 towers.get(i).fire();
             }
 
-            /** GENERATOR **/
+            /* GENERATOR */
             
             
         }

@@ -5,7 +5,7 @@ import java.awt.Point;
 public class NovaSpecialTower extends SpecialTower {
 
     public NovaSpecialTower(int range, Point position, int level, int maxCharge) {
-        super(range, position, level, maxCharge);
+        super(range, position, level);
     }
     @Override
     public void fire() {

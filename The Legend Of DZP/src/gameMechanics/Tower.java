@@ -8,11 +8,15 @@ public abstract class Tower {
     protected final Point position;
     protected int level;
     protected final int maxLevel = 5;
+    protected final int maxHP;
+    protected int HP;
 
-    protected Tower(Point position, int range, int level) {
+    protected Tower(Point position, int range, int level, int maxHP) {
         this.position = position;
         setLevel(level);
         setRange(range);
+        this.maxHP = maxHP;
+        setHP(HP);
     }
 
     ///Set parameters
@@ -42,10 +46,15 @@ public abstract class Tower {
     ///Action
     public boolean hasInRange() {
         
-        //for(int i=0;)
+        
+        
         
         return false;
     }
 
     public abstract void fire();
+
+    private void setHP(int HP) {
+        this.HP = HP;
+    }
 }

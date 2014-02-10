@@ -5,13 +5,11 @@ import java.awt.Point;
 
 public abstract class SpecialTower extends Tower {
     
-    private final int SpecialMaxCharge;
     private int charge;
+    private static final int SpecialMaxHP = 100;
     
-    public SpecialTower(int range, Point position, int level, int maxCharge) {
-        super(position, range, level);
-        this.SpecialMaxCharge = maxCharge;
-        this.charge = this.SpecialMaxCharge;
+    public SpecialTower(int range, Point position, int level) {
+        super(position, range, level, SpecialMaxHP);
     }
     
     ///Set parameters
