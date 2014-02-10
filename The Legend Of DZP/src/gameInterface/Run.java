@@ -1,6 +1,6 @@
 package gameInterface;
 
-import Resources.ResourceLoadThread;
+import pkgResources.ResourceLoadThread;
 import gameMechanics.EntityManagerThread;
 import org.lwjgl.LWJGLException;
 import org.lwjgl.opengl.Display;

@@ -1,4 +1,4 @@
-package resources;
+package pkgResources;
 
 import java.awt.Point;
 import java.awt.image.BufferedImage;
