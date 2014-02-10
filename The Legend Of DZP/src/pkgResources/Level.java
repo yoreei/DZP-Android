@@ -1,14 +1,14 @@
 package pkgResources;
 
-import java.awt.Point;
-import java.awt.image.BufferedImage;
+import gameMechanics.Tile;
 import java.io.File;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
 
 public class Level {
     
-    private ArrayList<ArrayList<BufferedImage>> mapTexture;
-    private ArrayList<Point> roads;
+    private ArrayList<ArrayList<ImageIcon>> mapTexture;
+    private ArrayList<Tile> roads;
     
     public Level (File levelFile) {
 

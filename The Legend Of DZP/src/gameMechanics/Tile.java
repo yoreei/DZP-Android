@@ -1,20 +1,22 @@
 package gameMechanics;
 
 import java.awt.Dimension;
-import java.awt.image.BufferedImage;
+import java.awt.Point;
+import javax.swing.ImageIcon;
 
 public class Tile {
     
     private Object occupator;
-    private BufferedImage area;
+    private ImageIcon area;
     private boolean solid;
+    private Point mapCoordinates;
     private static Dimension size;
     
     public static void setDimensions(int w, int h) {
         size.setSize(w, h);
     }
     
-    public Tile(BufferedImage area) {
+    public Tile(ImageIcon area) {
         setOccupator(null);
         setArea(area);
     }
@@ -26,7 +28,7 @@ public class Tile {
             this.solid = true;
         }
     }
-    private void setArea(BufferedImage area) {
+    private void setArea(ImageIcon area) {
         this.area = area;
     }
     
