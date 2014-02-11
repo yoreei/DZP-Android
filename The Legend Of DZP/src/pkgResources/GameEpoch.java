@@ -5,14 +5,14 @@ import java.util.ArrayList;
 import java.util.Map;
 import javax.swing.ImageIcon;
 
-public class Epoch {
+public class GameEpoch {
     
-    private ArrayList<Level> levels;
+    private ArrayList<GameLevel> levels;
     private ArrayList<ArrayList<ImageIcon>> mapTexture;
     private ImageIcon characterSkin;
     private Map<String, ImageIcon> towerSkins;
 
-    public Epoch(File epochFile) {
+    public GameEpoch(File epochFile) {
         
     }
 }

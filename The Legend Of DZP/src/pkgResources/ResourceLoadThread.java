@@ -8,12 +8,18 @@ import javax.swing.JProgressBar;
 public class ResourceLoadThread extends Thread {
     
     private JProgressBar p;
-    private ArrayList<Epoch> epoches;
+    private ArrayList<GameEpoch> epoches;
     
     public ResourceLoadThread(JProgressBar p) {
         this.p = p;
+        
+        
+        //Levels
+        GameLevel.levels.put(null, null);
+        
+        
     }
-    public void setCurrentResources(Epoch e, Level l) {
+    public void setCurrentResources(Level l) {
         
     }
     
