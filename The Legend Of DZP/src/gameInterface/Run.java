@@ -27,5 +27,7 @@ public class Run {
             Display.update();
         }
         Display.destroy();*/
+        
+        pkgResources.ResourceLoadThread a = new pkgResources.ResourceLoadThread(null);
     }
 }
