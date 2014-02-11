@@ -1,5 +1,6 @@
 package pkgResources;
 
+import java.awt.Point;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.File;
@@ -10,46 +11,61 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JProgressBar;
 
 public class ResourceLoadThread extends Thread {
 
     private JProgressBar p;
     private ArrayList<GameEpoch> epoches;
+    private ClassLoader cl;
+    private BufferedReader resourceReader;
+    private URL resourceURL;
+    private int epochCount;
+    private int levelCountPerEpoch;
 
     public ResourceLoadThread(JProgressBar p) throws IOException {
         //this.p = p;
 
 
         //Load
-        ClassLoader cl = getClass().getClassLoader();
-        URL url = cl.getResource("pkgResources/res/fileindex.ini");
-        BufferedInputStream stream = (BufferedInputStream) url.openStream();
-        InputStreamReader read = new InputStreamReader(stream);
-        BufferedReader r = new BufferedReader(read);
-        String line = r.readLine();
-        int epochCount = Integer.parseInt(line);
-        line = r.readLine();
-        int levelCountPerEpoche = Integer.parseInt(line);
+        cl = getClass().getClassLoader();
+        resourceURL = cl.getResource("res/fileindex");
+        resourceReader = new BufferedReader(
+                new InputStreamReader(
+                (BufferedInputStream) resourceURL.openStream()));
         
-        for(int i=1;i<=epochCount;i++) {
-            
-            
+        String line = resourceReader.readLine();
+        epochCount = Integer.parseInt(line);
+        line = resourceReader.readLine();
+        levelCountPerEpoch = Integer.parseInt(line);
+
+        resourceReader.close();
+        
+        for (int i = 1; i <= epochCount; i++) {
             
         }
 
     }
 
-    private void readEpoch() {
+    private void readEpoch(int n)  {
+
+        final String namePrefix = "res/epoch" + n + "/" + n + "level";
+        
+        ArrayList<Point> road;
+        ArrayList<ArrayList<ImageIcon>> texture;
+        for(int i=1;i<=levelCountPerEpoch;i++) {
+            
+            
+        }
+        
+        
         
     }
-    
+
     private void readLevel() {
-        
     }
-    
-    
-    
+
     public void setCurrentResources(Level l) {
     }
 

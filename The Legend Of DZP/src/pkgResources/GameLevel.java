@@ -1,7 +1,6 @@
 package pkgResources;
 
-import gameMechanics.Tile;
-import java.io.File;
+import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Map;
 import javax.swing.ImageIcon;
@@ -11,10 +10,10 @@ public class GameLevel {
     public static Map<GameLevel, String> levels;
     
     private ArrayList<ArrayList<ImageIcon>> mapTexture;
-    private ArrayList<Tile> roads;
+    private ArrayList<Point> roads;
     
-    public GameLevel (File levelFile) {
-        
+    public GameLevel (ArrayList<Point> roads, ArrayList<ArrayList<ImageIcon>> mapTexture) {
+             
     }
     
 }
