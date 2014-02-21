@@ -1,10 +1,10 @@
 package pkgResources;
 
+import java.awt.Image;
 import java.awt.Point;
+import java.awt.image.BufferedImage;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
@@ -23,8 +23,12 @@ public class ResourceLoadThread extends Thread {
     private URL resourceURL;
     private int epochCount;
     private int levelCountPerEpoch;
-
-    public ResourceLoadThread(JProgressBar p) throws IOException {
+    
+    private BufferedImage titleBackground;
+    
+    
+    
+    public ResourceLoadThread(JProgressBar p) throws IOException, InterruptedException {
         //this.p = p;
 
 
@@ -45,9 +49,9 @@ public class ResourceLoadThread extends Thread {
         for (int i = 1; i <= epochCount; i++) {
             
         }
-
     }
 
+    ///Read
     private void readEpoch(int n)  {
 
         final String namePrefix = "res/epoch" + n + "/" + n + "level";
@@ -65,19 +69,40 @@ public class ResourceLoadThread extends Thread {
 
     private void readLevel() {
     }
-
+    
+    ///Set
     public void setCurrentResources(Level l) {
     }
 
+    
+    ///Get
+    public Image getTitleBackground() {
+        System.out.println("wat");
+        ImageIcon ret = new ImageIcon(cl.getResource("res/titleBackground.png"));
+        System.out.println(ret);
+        return ret.getImage();
+    }
+    
+    public GameEpoch getEpoch(int n) {
+        return null;
+        
+    }
+    
+    public GameLevel getLevel(int n) {
+        return null;
+        
+    }
+    
     @Override
     public void run() {
         for (int i = 0; i <= 10000; i++) {
             try {
-                p.setValue(i / 100);
-                Thread.sleep(1);
+                //p.setValue(i / 100);
+                Thread.sleep(3000);
             } catch (InterruptedException ex) {
                 Logger.getLogger(ResourceLoadThread.class.getName()).log(Level.SEVERE, null, ex);
             }
+            System.out.println("ASD");
         }
     }
 }
