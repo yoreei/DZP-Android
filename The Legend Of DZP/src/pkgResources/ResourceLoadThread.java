@@ -23,6 +23,7 @@ public class ResourceLoadThread extends Thread {
     private URL resourceURL;
     private int epochCount;
     private int levelCountPerEpoch;
+    private static final String root = "res/";
     
     private BufferedImage titleBackground;
     
@@ -31,10 +32,10 @@ public class ResourceLoadThread extends Thread {
     public ResourceLoadThread(JProgressBar p) throws IOException, InterruptedException {
         //this.p = p;
 
-
+        epoches = new ArrayList<>();
         //Load
         cl = getClass().getClassLoader();
-        resourceURL = cl.getResource("res/fileindex");
+        resourceURL = cl.getResource(root + "fileindex");
         resourceReader = new BufferedReader(
                 new InputStreamReader(
                 (BufferedInputStream) resourceURL.openStream()));
@@ -45,25 +46,31 @@ public class ResourceLoadThread extends Thread {
         levelCountPerEpoch = Integer.parseInt(line);
 
         resourceReader.close();
+        readEpoch(1);
         
         for (int i = 1; i <= epochCount; i++) {
             
         }
     }
-
+    
+    public CurrentGame createGame(int e, int l) {
+        return new CurrentGame(epoches.get(0), null, null);
+    }
+    
     ///Read
-    private void readEpoch(int n)  {
+    private void readEpoch(int n) throws IOException  {
 
-        final String namePrefix = "res/epoch" + n + "/" + n + "level";
+        final String namePrefix = root + "epoch" + n + "/" + n + "level";
         
         ArrayList<Point> road;
-        ArrayList<ArrayList<ImageIcon>> texture;
+        /*ArrayList<ArrayList<ImageIcon>> texture;
         for(int i=1;i<=levelCountPerEpoch;i++) {
             
-            
-        }
+        }*/
         
-        
+        epoches.add(0,
+                new GameEpoch(
+                new ImageIcon(cl.getResource(root + "epoch" + 1 + "/textureTower.png"))));
         
     }
 
@@ -77,14 +84,12 @@ public class ResourceLoadThread extends Thread {
     
     ///Get
     public Image getTitleBackground() {
-        System.out.println("wat");
-        ImageIcon ret = new ImageIcon(cl.getResource("res/titleBackground.png"));
-        System.out.println(ret);
+        ImageIcon ret = new ImageIcon(cl.getResource(root+"titleBackground.png"));
         return ret.getImage();
     }
     
     public GameEpoch getEpoch(int n) {
-        return null;
+        return epoches.get(n);
         
     }
     
@@ -102,7 +107,6 @@ public class ResourceLoadThread extends Thread {
             } catch (InterruptedException ex) {
                 Logger.getLogger(ResourceLoadThread.class.getName()).log(Level.SEVERE, null, ex);
             }
-            System.out.println("ASD");
         }
     }
 }
