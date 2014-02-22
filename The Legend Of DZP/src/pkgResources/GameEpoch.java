@@ -1,22 +1,26 @@
 package pkgResources;
 
+import java.awt.Image;
 import java.util.ArrayList;
-import java.util.Map;
 import javax.swing.ImageIcon;
 
 public class GameEpoch {
-    
-    private ArrayList<GameLevel> levels;
-    private ImageIcon mapTexture;
-    private ImageIcon characterSkin;
-    private Map<String, ImageIcon> towerSkins;
 
-    public GameEpoch(ImageIcon a) {
-        this.mapTexture = a;
+    private ArrayList<GameLevel> levels;
+    private ImageIcon characterSkin;
+    private ImageIcon towerSkin;
+
+    public GameEpoch(ImageIcon towerSkin, ArrayList<GameLevel> levels) {
+
+        this.towerSkin = towerSkin;
+        this.levels = levels;
     }
-    
-    public ImageIcon getMapTexture() {
-        return this.mapTexture;
-        
+
+    public ImageIcon getTowerSkin() {
+        return this.towerSkin;
+    }
+
+    public GameLevel getLevel(int n) {
+        return levels.get(n);
     }
 }

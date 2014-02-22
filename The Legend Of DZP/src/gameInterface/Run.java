@@ -1,6 +1,8 @@
 package gameInterface;
 
 import gameMechanics.EntityManagerThread;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.io.IOException;
 import pkgResources.ResourceLoadThread;
 /*import org.lwjgl.LWJGLException;
@@ -11,8 +13,10 @@ public class Run {
 
     public static EntityManagerThread manager;
     public static ResourceLoadThread resources;
+    public static final Dimension ScreenSize =
+            Toolkit.getDefaultToolkit().getScreenSize();
 
-    public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException /*throws LWJGLException **/ {
+    public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException, Exception /*throws LWJGLException **/ {
         ///EventQueue
 
 
@@ -30,6 +34,6 @@ public class Run {
 
         resources = new pkgResources.ResourceLoadThread(null);
         resources.start();
-        new gameInterface.TitleScreen().setVisible(true);
+        new gameInterface.Screen(new Dimension(1366, 704)).setVisible(true);
     }
 }
