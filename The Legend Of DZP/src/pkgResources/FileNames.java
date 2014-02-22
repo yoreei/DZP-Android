@@ -1,13 +1,5 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package pkgResources;
 
-/**
- *
- * @author Madara1233
- */
 public enum FileNames {
 
     root("res/"),
@@ -15,7 +7,7 @@ public enum FileNames {
     level("level"),
     mapConfig("mapConfig"),
     mobImage("texture0.png"),
-    mapImage("map1.png"),
+    mapImage("map.png"),
     towerImage("texture1.png"),
     backgroundImage("bg.png"),
     fileIndex("config");

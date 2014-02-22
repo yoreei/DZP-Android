@@ -4,7 +4,7 @@ import gameMechanics.EntityManagerThread;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.io.IOException;
-import pkgResources.ResourceLoadThread;
+import pkgResources.ResourceLoader;
 /*import org.lwjgl.LWJGLException;
  import org.lwjgl.opengl.Display;
  import org.lwjgl.opengl.DisplayMode;*/
@@ -12,7 +12,7 @@ import pkgResources.ResourceLoadThread;
 public class Run {
 
     public static EntityManagerThread manager;
-    public static ResourceLoadThread resources;
+    public static ResourceLoader resources;
     public static final Dimension ScreenSize =
             Toolkit.getDefaultToolkit().getScreenSize();
 
@@ -32,8 +32,8 @@ public class Run {
          }
          Display.destroy();*/
 
-        resources = new pkgResources.ResourceLoadThread(null);
-        resources.start();
+        resources = new pkgResources.ResourceLoader();
+        System.out.println("DONE");
         new gameInterface.Screen(new Dimension(1366, 704)).setVisible(true);
     }
 }

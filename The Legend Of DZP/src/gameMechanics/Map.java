@@ -27,18 +27,20 @@ public class Map {
         String line = readResource.readLine();
         int x = Integer.parseInt(line.substring(0, line.indexOf(' ')));
         int y = Integer.parseInt(line.substring(line.indexOf(' ') + 1));
-        System.out.println(x + " " + y);
-        for (int i = 0; i <= y - 1; i++) {
+        
+        for (int i = 0; i <= x - 1; i++) {
             this.tiles.add(new ArrayList<Tile>());
             line = readResource.readLine();
             int begin = 0;
-            for (int j = 0; j <= x - 1; j++) {
-
-                int state = Integer.parseInt(line.substring(begin, begin + 1));
-                System.out.println(i+ " " + j + " " + state);
+            for (int j = 0; j <= y - 1; j++) {
+                int state = 0;
+                try {
+                    state = Integer.parseInt(line.substring(begin, begin + 1));
+                } catch (Exception ex) {
+                    System.out.println(begin);
+                }
                 this.tiles.get(i).add(new Tile(state));
                 begin += 2;
-
             }
         }
     }
@@ -56,8 +58,6 @@ public class Map {
         for (int i = 0; i <= tiles.size() - 1; i++) {
 
             for (int j = 0; j <= tiles.get(i).size() - 1; j++) {
-
-                //System.out.println(i + " " + j + " " + tiles.get(i).get(j).getOccupator().toString());
                 switch (tiles.get(i).get(j).getOccupator()) {
                     case ROAD:
                         g.setColor(Color.red);
@@ -73,12 +73,10 @@ public class Map {
                         i * Tile.size.height,
                         Tile.size.width,
                         Tile.size.height);
-
             }
         }
 
         ImageIO.write(r, "png", new File("E:/test.png"));
-
         return r;
     }
 }
