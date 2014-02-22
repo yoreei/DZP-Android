@@ -13,6 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import pkgResources.CurrentGame;
+import pkgResources.ResourceLoader;
 
 public class Screen extends JFrame {
 
@@ -22,12 +23,18 @@ public class Screen extends JFrame {
     private final JButton btnQuit;
     private JPanel background;
     private Image bg;
-    private CurrentGame current;
+    private  CurrentGame current;
 
-    public Screen(final Dimension size) {
+    public Screen(final Dimension size) throws InterruptedException {
 
+        synchronized(ResourceLoader.loaded) {
+            while(ResourceLoader.titleBackground==null) {
+                ResourceLoader.loaded.wait();
+            }
+        }
         this.size = size;
-        bg = Run.resources.getTitleBackground();
+        
+        bg = ResourceLoader.titleBackground.getImage();
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setExtendedState(MAXIMIZED_BOTH);
         btnStart = new JButton("Start Game");
@@ -35,7 +42,7 @@ public class Screen extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    current = Run.resources.createGame(0, 0);
+                    current = ResourceLoader.createGame(0, 0);
                 } catch (IOException ex) {
                     Logger.getLogger(Screen.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -50,7 +57,7 @@ public class Screen extends JFrame {
                 repaint();
             }
         });
-
+        
         btnQuit = new JButton("Quit Game");
         btnQuit.addActionListener(new ActionListener() {
             @Override
@@ -59,8 +66,6 @@ public class Screen extends JFrame {
             }
         });
 
-
-        //bg = Run.resources.getTitleBackground();
         background = new JPanel() {
             private static final long serialVersionUID = 1L;
 
@@ -76,7 +81,6 @@ public class Screen extends JFrame {
             }
         };
         this.add(background);
-
         GroupLayout bgLayout = new GroupLayout(background);
         bgLayout.setHorizontalGroup(
                 bgLayout.createSequentialGroup()
@@ -87,6 +91,6 @@ public class Screen extends JFrame {
                 .addComponent(btnStart)
                 .addComponent(btnQuit));
 
-
+        repaint();
     }
 }
