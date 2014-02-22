@@ -52,7 +52,6 @@ public class ResourceLoadThread extends Thread {
 
         resourceReader.close();
         epoches.add(readEpoch(1));
-        readLevel(1, 1);
         for (int i = 1; i <= epochCount; i++) {
         }
     }

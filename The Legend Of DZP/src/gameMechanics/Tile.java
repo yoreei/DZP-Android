@@ -10,12 +10,6 @@ public class Tile {
     private static final int TILE_MISC = 0;
     private static final int TILE_NEXUS = 2;
     private Occupator occupator;
-
-    private enum Occupator {
-
-        ROAD, MISC, NEXUS;
-        public int asd;
-    };
     private boolean solid;
     private Point mapCoordinates;
 
@@ -33,6 +27,10 @@ public class Tile {
 
     }
 
+    public Occupator getOccupator() {
+        return this.occupator;
+    }
+
     ///Set parameters
     private void setOccupator(Occupator o) {
         this.occupator = o;
@@ -40,7 +38,7 @@ public class Tile {
             setSolid(true);
         }
     }
-    
+
     private void setSolid(boolean s) {
         this.solid = s;
     }

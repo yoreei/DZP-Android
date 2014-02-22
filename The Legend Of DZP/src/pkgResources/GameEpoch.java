@@ -1,6 +1,5 @@
 package pkgResources;
 
-import java.awt.Image;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
@@ -11,7 +10,6 @@ public class GameEpoch {
     private ImageIcon towerSkin;
 
     public GameEpoch(ImageIcon towerSkin, ArrayList<GameLevel> levels) {
-
         this.towerSkin = towerSkin;
         this.levels = levels;
     }

@@ -42,6 +42,11 @@ public class Screen extends JFrame {
                 bg = current.getLevel().getMapImage().getImage();
                 btnStart.setVisible(false);
                 btnQuit.setVisible(false);
+                try {
+                    current.getLevel().getMap().getMapImage();
+                } catch (Exception ex) {
+                    Logger.getLogger(Screen.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 repaint();
             }
         });
