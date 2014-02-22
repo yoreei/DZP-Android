@@ -36,11 +36,15 @@ public class Run {
             @Override
             public void run() {
                 try {
-                    new gameInterface.Screen(new Dimension(1366, 704)).setVisible(true);
+                    gameInterface.Screen s = new gameInterface.Screen(new Dimension(1366, 704));
+                    s.setVisible(true);
+                    new LoaderThread(s.progress).start();
+                    
                 } catch (Exception ex) {
                     Logger.getLogger(Run.class.getName()).log(Level.SEVERE, null, ex);
                 }            
             }
         }).start();
+        
     }
 }

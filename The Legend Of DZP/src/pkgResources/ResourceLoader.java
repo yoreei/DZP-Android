@@ -20,11 +20,13 @@ public class ResourceLoader {
     public static int epochCount;
     public static int levelCountPerEpoch;
     public static ImageIcon titleBackground;
-    public static final Object loaded;
+    public static final Integer loaded;
+    public static volatile int progress = 0;
 
     static {
-        loaded = new Object();
+        loaded = new Integer(0);
     }
+
     public static void load() throws Exception {
 
         cl = ResourceLoader.class.getClassLoader();
@@ -37,11 +39,12 @@ public class ResourceLoader {
         titleBackground = new ImageIcon(
                 icon.getImage()
                 .getScaledInstance(icon.getIconWidth(), icon.getIconHeight() - 64, Image.SCALE_SMOOTH));
-        
+
         synchronized (loaded) {
+            progress += 60;
             loaded.notifyAll();
         }
-        
+
         epoches = new ArrayList<>();
         String line = resourceReader.readLine();
         epochCount = Integer.parseInt(line);
@@ -50,12 +53,15 @@ public class ResourceLoader {
         resourceReader.close();
         for (int i = 1; i <= epochCount; i++) {
             epoches.add(readEpoch(i));
+            synchronized (loaded) {
+                loaded.notifyAll();
+                progress += 8;
+            }
         }
-
     }
 
     public static CurrentGame createGame(int e, int l) throws IOException {
-        
+
         return new CurrentGame(epoches.get(e), epoches.get(e).getLevel(l), null);/* Not finished */
     }
 
@@ -66,8 +72,8 @@ public class ResourceLoader {
         tower = new ImageIcon(cl.getResource(FileNames.getPathTo(n, FileNames.towerImage)));
 
         ArrayList<GameLevel> levels = new ArrayList<>();
-        
-        for(int i=1;i<=levelCountPerEpoch;i++) {
+
+        for (int i = 1; i <= levelCountPerEpoch; i++) {
             levels.add(readLevel(i, n));
         }
 
@@ -80,5 +86,4 @@ public class ResourceLoader {
                 cl.getResource(FileNames.getPathTo(e, n, FileNames.mapImage)),
                 cl.getResource(FileNames.getPathTo(e, n, FileNames.mapConfig)));
     }
-
 }
