@@ -5,6 +5,7 @@ import java.awt.Image;
 import java.awt.MediaTracker;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
@@ -47,6 +48,8 @@ public class ResourceLoader {
 
         epoches = new ArrayList<>();
         String line = resourceReader.readLine();
+        File f = new File("E:/Anime and Manga/MMCE_Win32.zip");
+        System.out.println(f.getParent());
         epochCount = Integer.parseInt(line);
         line = resourceReader.readLine();
         levelCountPerEpoch = Integer.parseInt(line);

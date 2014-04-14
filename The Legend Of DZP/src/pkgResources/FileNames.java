@@ -6,9 +6,9 @@ public enum FileNames {
     epoch("epoch"),
     level("level"),
     mapConfig("mapConfig"),
-    mobImage("texture0.png"),
+    mobImage("mob.png"),
     mapImage("map.png"),
-    towerImage("texture1.png"),
+    towerImage("tower.png"),
     backgroundImage("bg.png"),
     fileIndex("config");
     private String value;
