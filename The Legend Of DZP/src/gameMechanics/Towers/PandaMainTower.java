@@ -1,4 +1,4 @@
-package gameMechanics;
+package gameMechanics.Towers;
 
 public class PandaMainTower extends MainTower {
     

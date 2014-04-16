@@ -1,5 +1,6 @@
-package gameMechanics;
+package gameMechanics.Towers;
 
+import gameMechanics.Towers.Tower;
 import java.awt.Point;
 import java.awt.Rectangle;
 

@@ -1,5 +1,6 @@
-package gameMechanics;
+package gameMechanics.Towers;
 
+import gameMechanics.Towers.SpecialTower;
 import java.awt.Rectangle;
 
 public class LongRangeSpecialTower extends SpecialTower {

@@ -1,4 +1,4 @@
-package gameMechanics;
+package gameMechanics.Towers;
 
 
 import java.awt.Rectangle;

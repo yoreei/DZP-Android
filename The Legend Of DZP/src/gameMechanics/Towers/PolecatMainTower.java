@@ -1,11 +1,14 @@
-package gameMechanics;
+package gameMechanics.Towers;
 
+import java.awt.Point;
 import java.awt.Rectangle;
 
-public class PigMainTower extends MainTower {
+public class PolecatMainTower extends MainTower {
+
     
-    public PigMainTower(int level) {
-        super(PigPosition, level);
+    
+    public PolecatMainTower(int level) {
+        super(PolecatPosition, level);
     }
     
 
