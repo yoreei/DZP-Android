@@ -23,7 +23,7 @@ public abstract class Mob {
     }
     
     private int findPath() {
-        
+        return 0; //NOT DONE YET!!!
     }
     
     private void setPosition(Point p) {
