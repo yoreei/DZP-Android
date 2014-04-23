@@ -46,7 +46,7 @@ public class ResourceLoader {
             loaded.notifyAll();
         }
 
-        epoches = new ArrayList<>();
+        epoches = new ArrayList();
         String line = resourceReader.readLine();
         File f = new File("E:/Anime and Manga/MMCE_Win32.zip");
         System.out.println(f.getParent());
@@ -74,7 +74,7 @@ public class ResourceLoader {
         ImageIcon tower, map;
         tower = new ImageIcon(cl.getResource(FileNames.getPathTo(n, FileNames.towerImage)));
 
-        ArrayList<GameLevel> levels = new ArrayList<>();
+        ArrayList<GameLevel> levels = new ArrayList();
 
         for (int i = 1; i <= levelCountPerEpoch; i++) {
             levels.add(readLevel(i, n));

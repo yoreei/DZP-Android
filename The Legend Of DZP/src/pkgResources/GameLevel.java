@@ -9,11 +9,11 @@ public class GameLevel {
 
     public static Map<GameLevel, String> levels;
     private final ImageIcon mapImage;
-    private final gameMechanics.Map mapConfig;
+    private final com.dzp.game.mechanics.Map mapConfig;
 
     public GameLevel(URL mapImage, URL mapConfig) throws Exception {
         
-        this.mapConfig = new gameMechanics.Map(mapConfig);
+        this.mapConfig = new com.dzp.game.mechanics.Map(mapConfig);
         
         ImageIcon m = new ImageIcon(mapImage);
         this.mapImage = new ImageIcon(
@@ -25,7 +25,7 @@ public class GameLevel {
         
     }
 
-    public gameMechanics.Map getMap () {
+    public com.dzp.game.mechanics.Map getMap () {
         return this.mapConfig;
     }
     

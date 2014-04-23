@@ -5,9 +5,9 @@ import javax.swing.ImageIcon;
 
 public class GameEpoch {
 
-    private ArrayList<GameLevel> levels;
+    private final ArrayList<GameLevel> levels;
     private ImageIcon characterSkin;
-    private ImageIcon towerSkin;
+    private final ImageIcon towerSkin;
 
     public GameEpoch(ImageIcon towerSkin, ArrayList<GameLevel> levels) {
         this.towerSkin = towerSkin;
